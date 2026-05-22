@@ -15,3 +15,5 @@ function Modules:require(url)
     Modules[url] = Result()
     return Modules[url]
 end
+
+return Modules
