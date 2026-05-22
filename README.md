@@ -24,6 +24,5 @@ end
 -- // Usage
 Req.Loader:start()
 Req.Utils:help()
-Req.UI:create()
 print(Req.Config.version)
 ```
