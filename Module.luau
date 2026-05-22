@@ -8,7 +8,7 @@ function Modules:require(url)
     local Success, Result = pcall(function()
         local Destination = Modules.Repository .. url
 
-        Destination = Destination .. "?nocache=" .. tostring(Os_Clock())
+        Destination = Destination .. "?nocache=" .. Tostring(Os_Clock())
         return Load(Game:HttpGet(Destination))
     end)
 
@@ -19,8 +19,7 @@ function Modules:require(url)
     Modules[url] = Result()
     
     if Modules.Debug then
-        local LoadTime = Os_Clock() - StartTime
-        print(string.format("[Module] Loaded %s in %.4fs", url, LoadTime))
+        warn(string.format("[Module] Loaded [%s] in %.3fs", url, Os_Clock() - StartTime))
     end
     
     return Modules[url]
