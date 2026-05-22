@@ -19,7 +19,7 @@ function Modules:require(url)
     Modules[url] = Result()
     
     if Modules.Debug then
-        warn(string.format("[Module] Loaded [%s] in %.3fs", url, Os_Clock() - StartTime))
+        warn(string.format("[Module]: Loaded [%s] in %.3fs", url, Os_Clock() - StartTime))
     end
     
     return Modules[url]
