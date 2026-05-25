@@ -1,4 +1,4 @@
-local Modules, Game, Load, Error, Tostring, Os_Clock = {}, game, loadstring, error, tostring, os.clock;
+local Modules, Game, Load, Error, Tostring, Os_Clock, String_Format = {}, game, loadstring, error, tostring, os.clock, string.format;
 Modules.Repository = ""; Modules.Debug = false;
 
 function Modules:require(url)
@@ -19,7 +19,7 @@ function Modules:require(url)
     Modules[url] = Result()
     
     if Modules.Debug then
-        warn(string.format("[Module]: Loaded [%s] in %.3fs", url, Os_Clock() - StartTime))
+        warn(String_Format("[Module]: Loaded [%s] in %.3fs", url, Os_Clock() - StartTime))
     end
     
     return Modules[url]
