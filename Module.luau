@@ -1,5 +1,5 @@
-local Modules, Game, Load, Error, Tostring, Os_Clock, String_Format = {}, game, loadstring, error, tostring, os.clock, string.format;
-Modules.Repository = ""; Modules.Debug = false;
+local Modules, Game, Load, Tostring, Os_Clock, String_Format = {}, game, loadstring, tostring, os.clock, string.format;
+Modules.Repository = nil; Modules.Debug = false;
 
 function Modules:require(url)
     if Modules[url] then return Modules[url] end
@@ -13,7 +13,7 @@ function Modules:require(url)
     end)
 
     if not Success then
-        Error("Failed to load: " .. url .. "\n" .. Result)
+        warn("[Module]: Failed to load: " .. url .. "\n" .. Result)
     end
 
     Modules[url] = Result()
