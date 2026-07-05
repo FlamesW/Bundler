@@ -12,7 +12,7 @@ function Modules:require(url)
         return Load(Game:HttpGet(Destination))
     end)
 
-    if not Success then
+    if not Success and Modules.Debug then
         warn("[Module]: Failed to load: " .. url .. "\n" .. Result)
     end
 
